@@ -34,7 +34,7 @@
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="weight" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="feature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="product_parameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="productParameter" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
         </EntityType>
         <EntityContainer Name="MyDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Prods" EntityType="Self.Prod" />
@@ -54,7 +54,7 @@
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="weight" ColumnName="weight" />
                 <ScalarProperty Name="feature" ColumnName="feature" />
-                <ScalarProperty Name="product_parameter" ColumnName="product_parameter" />
+                <ScalarProperty Name="productParameter" ColumnName="product_parameter" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

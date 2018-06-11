@@ -51,17 +51,18 @@
                             <td>
                                 <div class="col-md-3">
                                     <select class="dropdown-toggle" id="mapSelect" name="mapSelect">
-                                        <option value="NoMapped" selected="NoMapped">NoMapped</option>
-                                        <option value="SKU">SKU</option>
-                                        <option value="Brand">Brand</option>
-                                        <option value="Price">Price</option>
-                                        <option value="Weight">Weight</option>
-                                        <option value="Feature">Feature</option>
-                                        <option value="Product parameter">Product parameter</option>
-                                        <option value="Ignore">Ignore</option>
+                                        <option value="8" selected="NoMapped">NoMapped</option>
+                                        <option value="0">SKU</option>
+                                        <option value="1">Brand</option>
+                                        <option value="2">Price</option>
+                                        <option value="3">Weight</option>
+                                        <option value="4">Feature</option>
+                                        <option value="5">Product parameter</option>
+                                        <option value="7">Ignore</option>
                                     </select>
                                 </div>
                             </td>
+                         
 
                         </tr>
                     }
@@ -73,6 +74,7 @@
 
         </div>
     </div>
+    @ViewData["ErrorData"]
 }
 
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

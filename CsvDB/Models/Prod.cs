@@ -20,6 +20,6 @@ namespace CsvDB.Models
         public decimal price { get; set; }
         public Nullable<decimal> weight { get; set; }
         public string feature { get; set; }
-        public string product_parameter { get; set; }
+        public string productParameter { get; set; }
     }
 }

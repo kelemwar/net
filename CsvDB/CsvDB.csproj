@@ -173,7 +173,6 @@
     <Compile Include="Models\Prod.cs">
       <DependentUpon>Product.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProdMap.cs" />
     <Compile Include="Models\Product.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
