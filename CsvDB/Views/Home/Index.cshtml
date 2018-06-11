@@ -1,31 +1,106 @@
-﻿@{
+﻿@using System.Data;
+@using CsvDB.Models
+
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <h3>Import </h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr>
+                    <td>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+                        <input type="file" accept=".csv" name="upload" />
+                        <br>
+                        <input type="submit" value="Загрузить" />
+                        
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="col-lg-6">
+            <table class="table table-striped">
+
+                @if (ViewBag.Header != null)
+                {
+                    <tr>
+                        <td>
+                            <h4>Оригинал</h4>
+                        </td>
+                        <td>
+                            <h4>Страндарт</h4>
+                        </td>
+                    </tr>
+                    foreach (var head in ViewBag.Header)
+                    {
+                        <tr>
+                            <td>
+                                @head
+                            </td>
+                            <td>
+                                <div class="col-md-3">
+                                    <select class="dropdown-toggle" id="mapSelect" name="mapSelect">
+                                        <option value="NoMapped" selected="NoMapped">NoMapped</option>
+                                        <option value="SKU">SKU</option>
+                                        <option value="Brand">Brand</option>
+                                        <option value="Price">Price</option>
+                                        <option value="Weight">Weight</option>
+                                        <option value="Feature">Feature</option>
+                                        <option value="Product parameter">Product parameter</option>
+                                        <option value="Ignore">Ignore</option>
+                                    </select>
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+
+                    <input id="Submit1" type="submit" value="submit" />
+                }
+
+            </table>
+
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+}
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var oldV;
+            $('.dropdown-toggle').focus(function () {
+
+                oldV = $(this).val();
+                $('#currentSel').val(oldV);
+
+
+            });
+
+
+            $('.dropdown-toggle').change(function () {
+
+                var newV = $(this).val();
+                $('.dropdown-toggle').not(this).each(function () {
+                    if ($(this).val() == newV)
+                        $(this).val(oldV);
+                });
+
+
+                $(this).blur();
+            });
+        });
+
+    </script>*@
+
+
